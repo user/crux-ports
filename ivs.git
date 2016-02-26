@@ -1,0 +1,6 @@
+# Ilya Solovyov, crux ports collection
+
+NAME=ivs
+URL=git://github.com/user/crux-ports
+BRANCH=master
+
