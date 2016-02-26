@@ -1,0 +1,31 @@
+# Description: Music Player Daemon
+# URL:         http://www.musicpd.org/
+# Maintainer:  Ilya Solovyov shomyoS at gmail dot com
+# Depends on:  libmad libvorbis libid3tag glib
+# vim:set ts=4 sw=4:
+
+
+name=mpd
+version=0.19.12
+release=1
+source=(http://www.musicpd.org/download/mpd/0.19/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr \
+		--mandir=/usr/share/man \
+		--sysconfdir=/etc \
+		--enable-database \
+		--enable-libmpdclient \
+		--enable-alsa \
+		--enable-curl \
+		--disable-inotify \
+		--disable-aac
+
+	make
+	make DESTDIR=$PKG install
+	rm -rf $PKG/usr/share/doc
+	install -D -m 644 doc/mpdconf.example $PKG/usr/share/mpd/mpdconf.example
+}
+
