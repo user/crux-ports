@@ -1,0 +1,25 @@
+# Description:
+# URL:
+# Maintainer:
+# Packager:
+# Depends on:
+
+name=locale-en_RU
+version=0.5.1
+release=1
+source=(https://sourceforge.net/projects/en-ru/files/0.5.1/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	mkdir _build
+	cd _build
+
+	../configure --prefix=/usr \
+		--disable-rmp --disable-html
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -rf $PKG/usr/share/doc
+}
