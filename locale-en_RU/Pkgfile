@@ -1,8 +1,7 @@
-# Description:
-# URL:
-# Maintainer:
-# Packager:
-# Depends on:
+# Description: Locale en_RU is English language locale for Russia.
+# URL:         http://en-ru.sourceforge.net/
+# Maintainer:  Ilya Solovyov shomyoS at gmail dot com
+# Depends on:  glibc cmake
 
 name=locale-en_RU
 version=0.5.1
@@ -23,3 +22,4 @@ build() {
 
 	rm -rf $PKG/usr/share/doc
 }
+
