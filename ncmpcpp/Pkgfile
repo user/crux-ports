@@ -1,0 +1,30 @@
+# Description: ncmpcpp - featureful ncurses based MPD client inspired by ncmpc
+# URL:         http://ncmpcpp.rybczak.net/
+# Maintainer:  Ilya Solovyov, shomyoS at gmail.com
+# Depends on:  boost curl fftw libmpdclient ncurses readline taglib
+# vim:set ts=4 sw=4:
+
+name=ncmpcpp
+version=0.7.3
+release=1
+source=(http://ncmpcpp.rybczak.net/stable/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr \
+		--mandir=/usr/share/man \
+		--enable-clock \
+		--enable-outputs \
+		--enable-visualizer \
+		--with-curl \
+		--with-fftw \
+		--with-taglib
+
+	make
+	make DESTDIR=$PKG install
+	install -D -m 0644 $SRC/$name-$version/doc/bindings $PKG/usr/share/ncmpcpp/bindings
+	install -D -m 0644 $SRC/$name-$version/doc/config $PKG/usr/share/ncmpcpp/config
+	rm -rf $PKG/usr/share/doc
+}
+
