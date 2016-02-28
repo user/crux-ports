@@ -12,5 +12,6 @@ Personal ports collection
  - `# prt-get cache`
 4. Install the package
  - `prt-get depinst` 
-5. ...
+5. ?????
 6. Profit
+
