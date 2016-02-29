@@ -1,0 +1,26 @@
+# Description: an interactive process viewer for Unix
+# URL:         http://hisham.hm/htop/
+# Maintainer:  Ilya Solovyov, shomyoS at gmail dot com
+# Depends on:  ncurses
+# vim:set ts=4 sw=4:
+
+name=htop
+version=2.0.0
+release=1
+source=(http://hisham.hm/htop/releases/$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr \
+		--mandir=/usr/share/man \
+		--disable-nls \
+		--enable-proc \
+		--enable-unicode \
+		--enable-native-affinity
+
+	make
+	make DESTDIR=$PKG install
+	rm -rf $PKG/usr/share/{applications,pixmaps}
+}
+
