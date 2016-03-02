@@ -23,8 +23,8 @@ build() {
 
 	make
 	make DESTDIR=$PKG install
-	install -D -m 0644 $SRC/$name-$version/doc/bindings $PKG/usr/share/ncmpcpp/bindings
-	install -D -m 0644 $SRC/$name-$version/doc/config $PKG/usr/share/ncmpcpp/config
+	install -D -m 0644 doc/bindings $PKG/usr/share/ncmpcpp/bindings
+	install -D -m 0644 doc/config $PKG/usr/share/ncmpcpp/config
 	rm -rf $PKG/usr/share/doc
 }
 
