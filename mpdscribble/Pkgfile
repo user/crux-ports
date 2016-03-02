@@ -1,0 +1,27 @@
+# Description: mpdscribble is a mpd client which submits information about tracks to Lastfm
+# URL:         http://mpd.wikia.com/wiki/Client:Mpdscribble
+# Maintainer:  Ilya Solovyov. shomyoS at gmail dot com
+# Depends on:  libmpdclient
+# vim:set ts=4 sw=4:
+
+name=mpdscribble
+version=0.22
+release=1
+source=(http://www.musicpd.org/download/mpdscribble/0.22/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+
+	./autogen.sh
+	./configure --prefix=/usr \
+		--mandir=/usr/share/man \
+		--with-http-client=curl
+
+	make
+	make DESTDIR=$PKG install
+
+	install -D doc/mpdscribble.conf $PKG/usr/share/mpdscribble/mpdscribble.conf.example
+	rm -rf $PKG/usr/share/doc
+	rm -rf $PKG/usr/etc
+}
+
