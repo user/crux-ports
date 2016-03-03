@@ -1,0 +1,18 @@
+# Description: Linux tool to show progress for cp, mv, dd, ... (formerly known as cv)
+# URL:         https://github.com/Xfennec/progress
+# Maintainer:  Ilya Solovyov, shomyoS at gmail dot com
+# Depends on:  ncurses
+# vim:set ts=4 sw=4:
+
+name=progress
+version=0.13
+release=1
+source=(https://github.com/Xfennec/$name/archive/v$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	make
+	make PREFIX=/usr DESTDIR=$PKG install
+}
+
