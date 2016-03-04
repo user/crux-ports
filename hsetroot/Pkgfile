@@ -1,0 +1,21 @@
+# Description: hsetroot -- Yet another wallpaper application.
+# URL:         http://www.thegraveyard.org/hsetroot.php
+# Maintainer:  Ilya Solovyov, shomyoS at gmail dot com
+# Depends on:  imlib2
+# vim:set ts=4 sw=4:
+
+name=hsetroot
+version=1.0.2
+release=1
+source=(ftp://ftp.netbsd.org/pub/pkgsrc/distfiles/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./autogen.sh
+	LDFLAGS="-lX11" ./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+}
+
