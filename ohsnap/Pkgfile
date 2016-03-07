@@ -1,7 +1,7 @@
 # Description: Monospaced font based on artwiz snap.
 # URL:         http://sourceforge.net/projects/osnapfont/
 # Maintainer:  Ilya Solovyov, shomyoS at gmail dot com
-# Depends on:  xorg-font-alias xorg-mkfontdir xorg-mkfontscale fontconfig
+# Depends on:  xorg-mkfontdir xorg-mkfontscale fontconfig
 # vim:set ts=4 sw=4:
 
 name=ohsnap
@@ -13,9 +13,13 @@ build() {
 	cd $name-$version
 
 	install -d $PKG/usr/share/fonts/X11/misc
-	install -m 0644 ohsnap*.pcf $PKG/usr/share/fonts/X11/misc
-
 	install -d $PKG/usr/share/kbd/consolefonts
-	install -m 0644 ohsnap*.psfu $PKG/usr/share/kbd/consolefonts
+
+	for f in ohsnap*.pcf; do
+		install -m 0644 $f $PKG/usr/share/fonts/X11/misc
+	done
+	for f in ohsnap*.psfu; do
+		install -m 0644 ohsnap*.psfu $PKG/usr/share/kbd/consolefonts
+	done
 }
 
