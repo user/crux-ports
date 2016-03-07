@@ -1,0 +1,21 @@
+# Description: Bitmap font.
+# URL:         https://github.com/lucy/tewi-font
+# Maintainer:  Ilya Solovyov, shomyoS at gmail dot com
+# Depends on:  xorg-bdftopcf xorg-mkfontscale xorg-mkfontdir fontconfig
+# vim:set ts=4 sw=4:
+
+name=tewi-font
+version=2.0.0
+release=1
+source=(https://github.com/lucy/$name/archive/$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	make
+	install -d $PKG/usr/share/fonts/X11/misc
+	for f in out/*.pcf.gz; do
+		install -m 0644 $f $PKG/usr/share/fonts/X11/misc/
+	done
+}
+
