@@ -1,0 +1,18 @@
+# Description: A program for identifying or deleting duplicate files residing within specified directories.
+# URL:         https://github.com/adrianlopezroche/fdupes
+# Maintainer:  Ilya Solovyov, shomyoS at gmail dot com
+# Depends on:  glibc
+# vim:set ts=4 sw=4:
+
+name=fdupes
+version=1.51
+release=1
+source=(https://github.com/adrianlopezroche/fdupes/archive/$name-$version.tar.gz)
+
+build() {
+	cd $name-$name-$version
+
+	make
+	make PREFIX=$PKG/usr MAN_DIR=$PKG/usr/share/man/man1 install
+}
+
