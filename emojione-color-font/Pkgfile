@@ -1,0 +1,17 @@
+# Description: A color emoji SVGinOT font using Emoji One graphics with diversity and country flags.
+# URL:         https://github.com/eosrei/emojione-color-font
+# Maintainer:  Ilya Solovyov, shomyoS at gmail dot com
+# Depends on:  xorg-mkfontdir xorg-mkfontscale fontconfig
+# vim:set ts=4 sw=4:
+
+name=emojione-color-font
+version=1.0-beta2
+release=1
+source=(https://github.com/eosrei/$name/releases/download/v1.0-beta2/EmojiOneColor-SVGinOT-$version.zip)
+
+build() {
+
+	install -d $PKG/usr/share/fonts/X11/TTF
+	install -m 0644 $SRC/EmojiOneColor-SVGinOT.ttf $PKG/usr/share/fonts/X11/TTF
+}
+
