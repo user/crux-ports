@@ -1,0 +1,25 @@
+# Description: vnStat - a network traffic monitor for Linux and BSD
+# URL:         http://humdi.net/vnstat/
+# Maintainer:  Ilya Solovyov, shomyoS at gmail dot com
+# Depends on:  bash
+# vim:set ts=4 sw=4:
+
+name=vnstat
+version=1.15
+release=1
+source=(http://humdi.net/vnstat/$name-$version.tar.gz vnstatd)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr \
+		--mandir=/usr/share/man \
+		--sysconfdir=/etc
+
+	make
+	make DESTDIR=$PKG install
+
+	# rc script
+	install -D -m 0755 $SRC/vnstatd $PKG/etc/rc.d/vnstatd
+}
+
