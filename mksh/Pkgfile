@@ -1,0 +1,21 @@
+# Description: The MirBSD Korn Shell
+# URL:         https://www.mirbsd.org/mksh.htm
+# Maintainer:  Ilya Solovyov, shomyoS at gmail dot com
+# Depends on:  
+# vim:set ts=4 sw=4:
+
+name=mksh
+version=R52c
+release=1
+source=(http://www.mirbsd.org/MirOS/dist/mir/mksh/$name-$version.tgz)
+
+build() {
+	cd $name
+
+	sh Build.sh -r -c lto
+
+	install -D -m 0755 mksh $PKG/bin/mksh
+	install -D -m 0644 mksh.1 $PKG/usr/share/man/man1/mksh.1
+	install -D -m 0644 dot.mkshrc $PKG/usr/share/mksh/mkshrc
+}
+
