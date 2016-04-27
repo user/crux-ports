@@ -1,0 +1,26 @@
+# Description: HexChat is an IRC client
+# Mantainer:   Ilya Solovyov shomyoS at gmail dot com
+# Depends on:  gtk dbus-glib
+# URL:         https://hexchat.github.io/
+# vim:set ts=4 sw=4:
+
+name=hexchat
+version=2.12.0
+release=1
+source=(http://dl.hexchat.net/hexchat/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr \
+		--disable-isocodes \
+		--disable-libcanberra \
+		--disable-libnotify \
+		--disable-libproxy \
+		--disable-nls 
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -r $PKG/usr/share/locale
+}
