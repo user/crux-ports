@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# /etc/rc.d/vnstatd: start/stop rsyncd daemon
+# /etc/rc.d/vnstatd: start/stop vnstatd daemon
 #
 
 SSD=/sbin/start-stop-daemon
