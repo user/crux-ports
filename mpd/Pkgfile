@@ -5,7 +5,7 @@
 # vim:set ts=4 sw=4:
 
 name=mpd
-version=0.19.15
+version=0.19.17
 release=1
 source=(http://www.musicpd.org/download/mpd/0.19/$name-$version.tar.xz)
 
