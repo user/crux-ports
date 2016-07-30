@@ -1,6 +1,6 @@
 # Description: Music Player Daemon
 # URL:         http://www.musicpd.org/
-# Maintainer:  Ilya Solovyov, shomyoS at gmail dot com
+# Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
 # Depends on:  libmad libvorbis libid3tag glib
 # vim:set ts=4 sw=4:
 

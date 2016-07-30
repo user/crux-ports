@@ -1,5 +1,5 @@
 # Description: HexChat is an IRC client
-# Mantainer:   Ilya Solovyov shomyoS at gmail dot com
+# Mantainer:   Ilya Solovyov solovyov at protonmail dot com
 # Depends on:  gtk dbus-glib
 # URL:         https://hexchat.github.io/
 # vim:set ts=4 sw=4:

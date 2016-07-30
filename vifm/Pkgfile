@@ -1,0 +1,22 @@
+# Description: Ncurses based file manager with vi like keybindings
+# URL:         http://vifm.info/
+# Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
+# Depends on:  ncurses desktop-file-utils
+# vim:set ts=4 sw=4:
+
+name=vifm
+version=0.8.2
+release=1
+source=(http://downloads.sourceforge.net/$name/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr --without-gtk
+
+	make
+	make DESTDIR=$PKG install
+
+	rm -rf $PKG/usr/share/{applications,doc,pixmaps}
+}
+

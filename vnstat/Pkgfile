@@ -1,6 +1,6 @@
 # Description: vnStat - a network traffic monitor for Linux and BSD
 # URL:         http://humdi.net/vnstat/
-# Maintainer:  Ilya Solovyov, shomyoS at gmail dot com
+# Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
 # Depends on:  bash
 # vim:set ts=4 sw=4:
 

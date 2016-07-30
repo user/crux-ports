@@ -1,6 +1,6 @@
 # Description: an interactive process viewer for Unix
 # URL:         http://hisham.hm/htop/
-# Maintainer:  Ilya Solovyov, shomyoS at gmail dot com
+# Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
 # Depends on:  ncurses
 # vim:set ts=4 sw=4:
 

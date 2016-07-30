@@ -1,6 +1,6 @@
 # Description: WeeChat is a fast, light and extensible chat client.
 # URL:         https://weechat.org/
-# Maintainer:  Ilya Solovyov, shomyoS at gmail dot com
+# Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
 # Depends on:  cmake gnutls libgcrypt
 # vim:set ts=4 sw=4:
 

@@ -1,6 +1,6 @@
 # Description: A program for identifying or deleting duplicate files residing within specified directories.
 # URL:         https://github.com/adrianlopezroche/fdupes
-# Maintainer:  Ilya Solovyov, shomyoS at gmail dot com
+# Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
 # Depends on:  glibc
 # vim:set ts=4 sw=4:
 

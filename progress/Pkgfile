@@ -1,6 +1,6 @@
 # Description: Linux tool to show progress for cp, mv, dd, ... (formerly known as cv)
 # URL:         https://github.com/Xfennec/progress
-# Maintainer:  Ilya Solovyov, shomyoS at gmail dot com
+# Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
 # Depends on:  ncurses
 # vim:set ts=4 sw=4:
 

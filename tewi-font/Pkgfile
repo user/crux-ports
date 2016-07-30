@@ -1,6 +1,6 @@
 # Description: Bitmap font.
 # URL:         https://github.com/lucy/tewi-font
-# Maintainer:  Ilya Solovyov, shomyoS at gmail dot com
+# Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
 # Depends on:  xorg-bdftopcf xorg-mkfontscale xorg-mkfontdir fontconfig
 # vim:set ts=4 sw=4:
 
