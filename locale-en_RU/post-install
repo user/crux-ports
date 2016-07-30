@@ -1,4 +1,4 @@
 #!/bin/sh
 
-localedef -c -i en_RU -f UTF-8 en_RU.utf8
+localedef -c -i en_RU -f UTF-8 en_RU.UTF-8
 

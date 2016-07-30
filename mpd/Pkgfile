@@ -12,9 +12,10 @@ source=(http://www.musicpd.org/download/mpd/0.19/$name-$version.tar.xz)
 build() {
 	cd $name-$version
 
-	./configure --prefix=/usr \
-		--mandir=/usr/share/man \
+	./configure \
+		--prefix=/usr \
 		--sysconfdir=/etc \
+		--mandir=/usr/share/man \
 		--enable-database \
 		--enable-libmpdclient \
 		--enable-alsa \

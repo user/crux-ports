@@ -12,14 +12,7 @@ source=(http://sourceforge.net/projects/osnapfont/files/$name-$version.tar.gz)
 build() {
 	cd $name-$version
 
-	install -d $PKG/usr/share/fonts/X11/misc
-	install -d $PKG/usr/share/kbd/consolefonts
-
-	for f in ohsnap*.pcf; do
-		install -m 0644 $f $PKG/usr/share/fonts/X11/misc
-	done
-	for f in ohsnap*.psfu; do
-		install -m 0644 ohsnap*.psfu $PKG/usr/share/kbd/consolefonts
-	done
+	install -D -m 0644 -t $PKG/usr/share/fonts/X11/misc ohsnap*.pcf
+	install -D -m 0644 -t $PKG/usr/share/kbd/consolefonts ohsnap*.psfu
 }
 

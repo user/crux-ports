@@ -5,13 +5,14 @@
 # vim:set ts=4 sw=4:
 
 name=emojione-color-font
-version=1.0-beta2
+version=1.3
 release=1
-source=(https://github.com/eosrei/$name/releases/download/v1.0-beta2/EmojiOneColor-SVGinOT-$version.zip)
+source=(https://github.com/eosrei/emojione-color-font/releases/download/v1.3/EmojiOneColor-SVGinOT-Linux-$version.tar.gz)
 
 build() {
+	cd EmojiOneColor-SVGinOT-Linux-$version
 
-	install -d $PKG/usr/share/fonts/X11/TTF
-	install -m 0644 $SRC/EmojiOneColor-SVGinOT.ttf $PKG/usr/share/fonts/X11/TTF
+	install -D -m 0644 -t $PKG/usr/share/fonts/X11/TTF EmojiOneColor-SVGinOT.ttf
+	install -D -m 0644 -t $PKG/etc/fonts/conf.avail fontconfig/56-emojione-color.conf
 }
 
