@@ -12,7 +12,7 @@ source=(https://github.com/eosrei/emojione-color-font/releases/download/v1.3/Emo
 build() {
 	cd EmojiOneColor-SVGinOT-Linux-$version
 
-	install -D -m 0644 -t $PKG/usr/share/fonts/X11/TTF EmojiOneColor-SVGinOT.ttf
-	install -D -m 0644 -t $PKG/etc/fonts/conf.avail fontconfig/56-emojione-color.conf
+	install -m 0644 -D EmojiOneColor-SVGinOT.ttf $PKG/usr/share/fonts/X11/TTF/EmojiOneColor-SVGinOT.ttf
+	install -m 0644 -D fontconfig/56-emojione-color.conf $PKG/etc/fonts/conf.avail/56-emojione-color.conf
 }
 
