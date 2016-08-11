@@ -1,7 +1,7 @@
 # Description: Monospaced font based on artwiz snap.
 # URL:         http://sourceforge.net/projects/osnapfont/
 # Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
-# Depends on:  xorg-mkfontdir xorg-mkfontscale fontconfig
+# Depends on:  fontconfig xorg-mkfontdir xorg-mkfontscale xorg-font-util
 # vim:set ts=4 sw=4:
 
 name=ohsnap

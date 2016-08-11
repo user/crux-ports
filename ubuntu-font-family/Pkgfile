@@ -1,0 +1,17 @@
+# Description: It is a unique, custom designed font that has a very distinctive look and feel
+# URL:         http://font.ubuntu.com/
+# Mantainer:   Ilya Solovyov, solovyov at protonmail dot com
+# Depends on:  fontconfig xorg-mkfontdir xorg-mkfontscale xorg-font-util
+# vim:set ts=4 sw=4:
+
+name=ubuntu-font-family
+version=0.83
+release=1
+source=(http://font.ubuntu.com/download/$name-$version.zip)
+
+build() {
+	cd $name-$version
+
+	install -D -m 0644 -t $PKG/usr/share/fonts/X11/TTF Ubuntu*.ttf
+}
+

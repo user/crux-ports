@@ -1,0 +1,28 @@
+# Description: A DLNA/UPnP-AV Media server
+# URL:         https://sourceforge.net/projects/minidlna/
+# Mantainer:   Ilya Solovyov, solovyov at protonmail dot com
+# Depends on:  ffmpeg libexif libjpeg-turbo libid3tag flac libvorbis sqlite3 
+# vim:set ts=4 sw=4:
+
+name=minidlna
+version=1.1.5
+release=1
+source=(http://downloads.sourceforge.net/project/$name/$name/$version/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./autogen.sh
+	./configure \
+		--prefix=/usr \
+		--sbindir=/usr/bin \
+		--disable-nls
+
+	make
+	make DESTDIR=$PKG install	
+
+	install -m 0644 -D minidlna.conf $PKG/usr/share/minidlna/minidlna.conf
+	install -m 0644 -D minidlna.conf.5 $PKG/usr/share/man/man5/minidlna.conf.5
+	install -m 0644 -D minidlnad.8 $PKG/usr/share/man/man8/minidlnad.8
+}
+
