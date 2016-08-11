@@ -1,0 +1,23 @@
+# Description: General-purpose fonts released by Google as part of Android
+# URL:         http://www.droidfonts.com/
+# Mantainer:   Ilya Solovyov, solovyov at protonmail dot com
+# Depends on:  fontconfig xorg-mkfontdir xorg-mkfontscale xorg-font-util
+# vim:set ts=4 sw=4:
+
+name=droid-fonts
+version=20121017
+release=1
+source=(https://sources.archlinux.org/other/community/ttf-droid/ttf-droid-20121017.tar.xz \
+	sans-fontconfig.conf sans-mono-fontconfig.conf serif-fontconfig.conf)
+
+build() {
+	cd google-droid-fonts-$version
+
+	install -D -m 0644 -t $PKG/usr/share/fonts/X11/TTF Droid*.ttf
+
+	install -d $PKG/etc/fonts/conf.avail
+	install -m 0644 $SRC/sans-fontconfig.conf $PKG/etc/fonts/conf.avail/58-droid-sans.conf
+	install -m 0644 $SRC/serif-fontconfig.conf $PKG/etc/fonts/conf.avail/58-droid-serif.conf
+	install -m 0644 $SRC/sans-mono-fontconfig.conf $PKG/etc/fonts/conf.avail/58-droid-sans-mono.conf
+}
+
