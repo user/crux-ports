@@ -1,0 +1,21 @@
+# Description: Tools for monitoring system health (temperatures, voltages, fan speed, etc)
+# URL:         http://www.lm-sensors.org
+# Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
+# Depends on:  bison flex perl
+# vim:set ts=4 sw=4:
+
+name=lm_sensors
+version=3.4.0
+release=1
+source=(https://github.com/groeck/lm-sensors/archive/V3-4-0.tar.gz)
+
+build() {
+	cd lm-sensors-3-4-0
+
+	make \
+		PREFIX=/usr \
+		MANDIR=/usr/share/man \
+		BUILD_STATIC_LIB=0 \
+		DESTDIR=$PKG install
+}
+
