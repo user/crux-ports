@@ -5,7 +5,7 @@
 # vim:set ts=4 sw=4:
 
 name=mksh
-version=R52c
+version=R53a
 release=1
 source=(http://www.mirbsd.org/MirOS/dist/mir/mksh/$name-$version.tgz)
 
