@@ -1,7 +1,7 @@
 # Description: Userspace tool to query the state of the rfkill switches, buttons and subsystem interfaces.
 # URL:         https://wireless.wiki.kernel.org/en/users/Documentation/rfkill
 # Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
-# vim:set ts=4 sw=4:
+# vim:set ft=sh ts=4 sw=4:
 
 name=rfkill
 version=0.5

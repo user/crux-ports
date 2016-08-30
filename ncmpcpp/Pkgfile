@@ -2,7 +2,7 @@
 # URL:         http://ncmpcpp.rybczak.net/
 # Maintainer:  Ilya Solovyov, shomyoS at gmail.com
 # Depends on:  boost curl fftw libmpdclient ncurses readline taglib
-# vim:set ts=4 sw=4:
+# vim:set ft=sh ts=4 sw=4:
 
 name=ncmpcpp
 version=0.7.4

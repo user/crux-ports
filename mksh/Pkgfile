@@ -2,7 +2,7 @@
 # URL:         https://www.mirbsd.org/mksh.htm
 # Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
 # Depends on:  
-# vim:set ts=4 sw=4:
+# vim:set ft=sh ts=4 sw=4:
 
 name=mksh
 version=R53a

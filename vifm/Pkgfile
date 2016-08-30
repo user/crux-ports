@@ -2,7 +2,7 @@
 # URL:         http://vifm.info/
 # Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
 # Depends on:  ncurses desktop-file-utils
-# vim:set ts=4 sw=4:
+# vim:set ft=sh ts=4 sw=4:
 
 name=vifm
 version=0.8.2

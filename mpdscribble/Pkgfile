@@ -2,7 +2,7 @@
 # URL:         http://mpd.wikia.com/wiki/Client:Mpdscribble
 # Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
 # Depends on:  libmpdclient
-# vim:set ts=4 sw=4:
+# vim:set ft=sh ts=4 sw=4:
 
 name=mpdscribble
 version=0.22

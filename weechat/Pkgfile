@@ -2,7 +2,7 @@
 # URL:         https://weechat.org/
 # Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
 # Depends on:  cmake gnutls libgcrypt
-# vim:set ts=4 sw=4:
+# vim:set ft=sh ts=4 sw=4:
 
 name=weechat
 version=1.5

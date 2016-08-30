@@ -2,7 +2,7 @@
 # URL:         http://www.musicpd.org/
 # Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
 # Depends on:  libmad libvorbis libid3tag glib
-# vim:set ts=4 sw=4:
+# vim:set ft=sh ts=4 sw=4:
 
 name=mpd
 version=0.19.17
