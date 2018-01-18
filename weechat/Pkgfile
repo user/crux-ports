@@ -25,7 +25,7 @@ build() {
 			-DENABLE_NLS=off \
 			-DENABLE_RUBY=off \
 			-DENABLE_TCL=off \
-			-DENABLE_XFER=off 
+			-DENABLE_XFER=off
 
 	make
 	make DESTDIR=$PKG install
