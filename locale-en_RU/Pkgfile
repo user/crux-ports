@@ -2,7 +2,7 @@
 # URL:         http://en-ru.sourceforge.net/
 # Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
 # Depends on:  glibc cmake
-# vim:set ft=sh ts=4 sw=4:
+# vim:set ts=8 sw=8:
 
 name=locale-en_RU
 version=0.5.2
