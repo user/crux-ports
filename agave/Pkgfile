@@ -2,12 +2,13 @@
 # URL:         https://github.com/agarick/agave
 # Mantainer:   Ilya Solovyov, solovyov at protonmail dot com
 # Depends on:  fontconfig xorg-mkfontdir xorg-mkfontscale xorg-font-util
-# vim:set ft=sh ts=4 sw=4:
+# vim:set ts=8 sw=8:
 
 name=agave
 version=008
 release=1
-source=(https://github.com/agarick/agave/raw/master/dist/agave-r.ttf post-install)
+source=(https://github.com/agarick/agave/raw/master/dist/agave-r.ttf \
+	post-install)
 
 build() {
 
