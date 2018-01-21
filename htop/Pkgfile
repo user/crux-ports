@@ -2,7 +2,7 @@
 # URL:         http://hisham.hm/htop/
 # Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
 # Depends on:  ncurses
-# vim:set ft=sh ts=4 sw=4:
+# vim:set ts=8 sw=8:
 
 name=htop
 version=2.0.2

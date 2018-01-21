@@ -2,7 +2,7 @@
 # URL:         http://www.lm-sensors.org
 # Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
 # Depends on:  bison flex perl
-# vim:set ft=sh ts=4 sw=4:
+# vim:set ts=8 sw=8:
 
 name=lm_sensors
 version=3.4.0
