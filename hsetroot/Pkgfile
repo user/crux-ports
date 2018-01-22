@@ -1,8 +1,8 @@
 # Description: hsetroot -- Yet another wallpaper application.
-# URL:         http://www.thegraveyard.org/hsetroot.php
+# URL:         https://directory.fsf.org/wiki/Hsetroot
 # Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
 # Depends on:  imlib2
-# vim:set ft=sh ts=4 sw=4:
+# vim:set ts=8 sw=8:
 
 name=hsetroot
 version=1.0.2
