@@ -2,16 +2,17 @@
 # URL:         http://www.musicpd.org/
 # Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
 # Depends on:  boost libmpdclient libmad libvorbis libid3tag glib
-# vim:set ft=sh ts=4 sw=4:
+# vim:set ts=8 sw=8:
 
 name=mpd
-version=0.20.6
+version=0.20.15
 release=1
 source=(http://www.musicpd.org/download/mpd/0.20/$name-$version.tar.xz)
 
 build() {
 	cd $name-$version
 
+	./autogen.sh
 	./configure \
 		--prefix=/usr \
 		--sysconfdir=/etc \
@@ -21,11 +22,24 @@ build() {
 		--enable-alsa \
 		--enable-curl \
 		--disable-inotify \
-		--disable-aac
+		--disable-aac \
+		--disable-soundcloud \
+		--disable-openal \
+		--disable-oss \
+		--disable-systemd-daemon \
+		--disable-smbclient \
+		--disable-gme \
+		--disable-roar \
+		--disable-sndio \
+		--disable-haiku \
+		--disable-jack \
+		--disable-pulse \
+		--disable-sidplay \
+		--with-zeroconf=no
 
 	make
 	make DESTDIR=$PKG install
 	rm -rf $PKG/usr/share/doc
-	install -D -m 644 doc/mpdconf.example $PKG/usr/share/mpd/mpdconf.example
+	install -D -m 0644 doc/mpdconf.example $PKG/usr/share/mpd/mpdconf.example
 }
 
