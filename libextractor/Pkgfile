@@ -1,0 +1,22 @@
+# Description: GNU Libextractor is a library used to extract meta data from files.
+# URL:         http://www.gnu.org/software/libextractor/
+# Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
+# Depends on:  
+# vim:set ft=sh ts=8 sw=8:
+
+name=libextractor
+version=1.6
+release=1
+source=(https://ftp.gnu.org/gnu/libextractor/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	./configure \
+		--prefix=/usr \
+		--enable-shared \
+		--disable-static
+	make
+	make DESTDIR=$PKG install
+	rm -rf $PKG/usr/share/{info,locale}
+}
+
