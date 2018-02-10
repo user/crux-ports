@@ -1,7 +1,7 @@
-# Description:  
-# URL:          
-# Maintainer:   
-# Depends on:   
+# Description: Read and write meta information in files
+# URL:         https://www.sno.phy.queensu.ca/~phil/exiftool/
+# Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
+# Depends on:  perl
 # vim:set ft=sh ts=8 sw=8:
 
 name=exiftool
@@ -10,7 +10,7 @@ release=1
 source=(https://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-10.78.tar.gz)
 
 build() {
-	cd Image-ExifTool-10.78
+	cd Image-ExifTool-$version
 
 	perl Makefile.PL
 	make
