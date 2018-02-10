@@ -1,0 +1,25 @@
+# Description:  
+# URL:          
+# Maintainer:   
+# Depends on:   
+# vim:set ft=sh ts=8 sw=8:
+
+name=exiftool
+version=10.78
+release=1
+source=(https://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-10.78.tar.gz)
+
+build() {
+	cd Image-ExifTool-10.78
+
+	perl Makefile.PL
+	make
+	make DESTDIR=$PKG install
+
+	find $PKG \( -iname '*.pod' -or \
+		-iname '.packlist' -or \
+		-iname 'readme' \) -delete
+	find $PKG -empty -delete
+	rm -rf $PKG/usr/lib/perl5/site_perl/5.26/Image/ExifTool/{Charset,Lang}
+}
+
