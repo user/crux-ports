@@ -5,7 +5,7 @@
 # vim:set ts=8 sw=8:
 
 name=mpd
-version=0.20.15
+version=0.20.17
 release=1
 source=(http://www.musicpd.org/download/mpd/0.20/$name-$version.tar.xz)
 
@@ -21,6 +21,7 @@ build() {
 		--enable-libmpdclient \
 		--enable-alsa \
 		--enable-curl \
+		--enable-icu \
 		--disable-inotify \
 		--disable-aac \
 		--disable-soundcloud \
