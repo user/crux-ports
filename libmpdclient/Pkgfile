@@ -1,0 +1,21 @@
+# Description: A stable, documented, asynchronous API library for interfacing MPD
+# URL:         https://www.musicpd.org/libs/libmpdclient/
+# Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
+# Depends on:
+# vim:set ts=8 sw=8:
+
+name=libmpdclient
+version=2.14
+release=1
+source=(https://www.musicpd.org/download/libmpdclient/2/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	meson --prefix=/usr . build
+	ninja -C build
+	DESTDIR=$PKG ninja -C build install
+
+	rm -rf $PKG/usr/share
+}
+
