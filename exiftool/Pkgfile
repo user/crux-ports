@@ -5,9 +5,9 @@
 # vim:set ft=sh ts=8 sw=8:
 
 name=exiftool
-version=10.78
+version=10.80
 release=1
-source=(https://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-10.78.tar.gz)
+source=(https://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-$version.tar.gz)
 
 build() {
 	cd Image-ExifTool-$version
