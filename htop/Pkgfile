@@ -1,11 +1,11 @@
 # Description: an interactive process viewer for Unix
 # URL:         http://hisham.hm/htop/
-# Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
+# Maintainer:  Ilya Solovyov, solovyov at pm dot me
 # Depends on:  ncurses
 # vim:set ts=8 sw=8:
 
 name=htop
-version=2.0.2
+version=2.2.0
 release=1
 source=(http://hisham.hm/htop/releases/$version/$name-$version.tar.gz)
 
