@@ -1,11 +1,10 @@
 # Description: WeeChat is a fast, light and extensible chat client.
 # URL:         https://weechat.org/
-# Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
+# Maintainer:  Ilya Solovyov, solovyov at pm dot me
 # Depends on:  cmake gnutls libgcrypt
-# vim:set ts=8 sw=8:
 
 name=weechat
-version=2.0.1
+version=2.1
 release=1
 source=(https://weechat.org/files/src/$name-$version.tar.bz2)
 
@@ -19,15 +18,18 @@ build() {
 			-DCMAKE_INSTALL_PREFIX=/usr \
 			-DWEECHAT_HOME=~/.config/weechat \
 			-DCA_FILE=/etc/ssl/cert.pem \
-			-DENABLE_ASPELL=off \
-			-DENABLE_GUILE=off \
-			-DENABLE_JAVASCRIPT=off \
-			-DENABLE_NLS=off \
-			-DENABLE_RUBY=off \
-			-DENABLE_TCL=off \
-			-DENABLE_XFER=off
+			-DENABLE_ASPELL=false \
+			-DENABLE_GUILE=false \
+			-DENABLE_JAVASCRIPT=false \
+			-DENABLE_NLS=false \
+			-DENABLE_PYTHON=false \
+			-DENABLE_RUBY=false \
+			-DENABLE_TCL=false \
+			-DENABLE_XFER=false
 
 	make
 	make DESTDIR=$PKG install
+
+	rm -rf $PKG/usr/share
 }
 

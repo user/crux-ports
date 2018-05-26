@@ -2,6 +2,7 @@ drwxr-xr-x	root/root	usr/
 drwxr-xr-x	root/root	usr/bin/
 -rwxr-xr-x	root/root	usr/bin/weechat
 lrwxrwxrwx	root/root	usr/bin/weechat-curses -> weechat
+-rwxr-xr-x	root/root	usr/bin/weechat-headless
 drwxr-xr-x	root/root	usr/include/
 drwxr-xr-x	root/root	usr/include/weechat/
 -rw-r--r--	root/root	usr/include/weechat/weechat-plugin.h
@@ -20,13 +21,6 @@ drwxr-xr-x	root/root	usr/lib/weechat/plugins/
 -rwxr-xr-x	root/root	usr/lib/weechat/plugins/logger.so
 -rwxr-xr-x	root/root	usr/lib/weechat/plugins/lua.so
 -rwxr-xr-x	root/root	usr/lib/weechat/plugins/perl.so
--rwxr-xr-x	root/root	usr/lib/weechat/plugins/python.so
 -rwxr-xr-x	root/root	usr/lib/weechat/plugins/relay.so
 -rwxr-xr-x	root/root	usr/lib/weechat/plugins/script.so
 -rwxr-xr-x	root/root	usr/lib/weechat/plugins/trigger.so
-drwxr-xr-x	root/root	usr/share/
-drwxr-xr-x	root/root	usr/share/icons/
-drwxr-xr-x	root/root	usr/share/icons/hicolor/
-drwxr-xr-x	root/root	usr/share/icons/hicolor/32x32/
-drwxr-xr-x	root/root	usr/share/icons/hicolor/32x32/apps/
--rw-r--r--	root/root	usr/share/icons/hicolor/32x32/apps/weechat.png
