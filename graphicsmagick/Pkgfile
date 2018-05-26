@@ -1,0 +1,30 @@
+# Description: Image Processing System
+# URL:         http://www.graphicsmagick.org/
+# Maintainer:  Ilya Solovyov, solovyov at pm dot me
+# Depends on:  freetype lcms2 libwebp
+
+name=graphicsmagick
+version=1.3.29
+release=1
+source=(https://downloads.sourceforge.net/project/$name/$name/$version/GraphicsMagick-$version.tar.xz)
+
+build() {
+	cd GraphicsMagick-$version
+
+	./configure --prefix=/usr \
+		--enable-shared \
+		--disable-static \
+		--with-modules \
+		--with-jpeg \
+		--with-lcms2 \
+		--with-png \
+		--with-quantum-depth=16 \
+		--with-ttf \
+		--with-webp \
+		--with-xml
+
+	make
+	make DESTDIR=$PKG install
+	rm -rf $PKG/usr/share/doc
+}
+
