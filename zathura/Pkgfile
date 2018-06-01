@@ -1,0 +1,22 @@
+# Description: Customizable and functional document viewer
+# URL:         https://pwmt.org/projects/zathura/
+# Maintainer:  Ilya Solovyov, solovyov at pm dot me
+# Depends on:  girara
+
+name=zathura
+version=0.4.0
+release=1
+source=(https://pwmt.org/projects/zathura/download/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	sed -i "/subdir('doc')/d" meson.build
+	meson --prefix=/usr build
+	cd build
+	ninja
+
+	DESTDIR=$PKG ninja install
+	rm -rf $PKG/usr/share/{appdata,applications,icons,metainfo,locale}
+}
+
