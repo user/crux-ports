@@ -1,8 +1,7 @@
 # Description: DjVuLibre is an open source implementation of DjVu
 # URL:         http://djvu.sourceforge.net/
-# Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
-# Depends on:  libtiff librsvg
-# vim:set ts=8 sw=8:
+# Maintainer:  Ilya Solovyov, solovyov at pm dot me
+# Depends on:  librsvg
 
 name=djvulibre
 version=3.5.27
@@ -14,8 +13,8 @@ build() {
 
 	./autogen.sh
 	./configure --prefix=/usr \
-		--disable-xmltools \
-		--disable-desktopfiles
+		--disable-desktopfiles \
+		--disable-xmltools
 
 	make
 	make DESTDIR=$PKG install

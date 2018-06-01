@@ -1,7 +1,7 @@
 # Description: WeeChat is a fast, light and extensible chat client.
 # URL:         https://weechat.org/
 # Maintainer:  Ilya Solovyov, solovyov at pm dot me
-# Depends on:  cmake gnutls libgcrypt lua
+# Depends on:  cmake gnutls libgcrypt
 
 name=weechat
 version=2.1

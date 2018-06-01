@@ -12,16 +12,10 @@ build() {
 	cd GraphicsMagick-$version
 
 	./configure --prefix=/usr \
-		--enable-shared \
 		--disable-static \
+		--enable-shared \
 		--with-modules \
-		--with-jpeg \
-		--with-lcms2 \
-		--with-png \
-		--with-quantum-depth=16 \
-		--with-ttf \
-		--with-webp \
-		--with-xml
+		--with-quantum-depth=16
 
 	make
 	make DESTDIR=$PKG install
