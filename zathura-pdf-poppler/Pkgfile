@@ -1,0 +1,21 @@
+# Description: PDF support for zathura (poppler backend)
+# URL:         https://pwmt.org/projects/zathura-pdf-poppler/
+# Maintainer:  Ilya Solovyov, solovyov at pm dot me
+# Depends on:  zathura poppler-glib
+
+name=zathura-pdf-poppler
+version=0.2.9
+release=1
+source=(https://pwmt.org/projects/zathura/plugins/download/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	meson --prefix=/usr build
+	cd build
+	ninja
+
+	DESTDIR=$PKG ninja install
+	rm -rf $PKG/usr/share
+}
+
