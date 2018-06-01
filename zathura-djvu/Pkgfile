@@ -1,0 +1,21 @@
+# Description: DjVu support for Zathura
+# URL:         https://pwmt.org/projects/zathura-djvu/
+# Maintainer:  Ilya Solovyov, solovyov at pm dot me
+# Depends on:  zathura djvulibre
+
+name=zathura-djvu
+version=0.2.8
+release=1
+source=(https://pwmt.org/projects/zathura-djvu/download/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+	meson --prefix=/usr build
+	cd build
+	ninja
+
+	DESTDIR=$PKG ninja install
+	rm -rf $PKG/usr/share
+}
+
