@@ -1,11 +1,10 @@
 # Description: Music Player Daemon
 # URL:         http://www.musicpd.org/
-# Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
-# Depends on:  boost libmpdclient libmad libvorbis libid3tag glib
-# vim:set ts=8 sw=8:
+# Maintainer:  Ilya Solovyov, solovyov at pm dot me
+# Depends on:  boost flac libmpdclient libmad libid3tag glib
 
 name=mpd
-version=0.20.19
+version=0.20.20
 release=1
 source=(http://www.musicpd.org/download/mpd/0.20/$name-$version.tar.xz)
 
