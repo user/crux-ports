@@ -1,11 +1,10 @@
 # Description: ncmpcpp - featureful ncurses based MPD client inspired by ncmpc
 # URL:         http://ncmpcpp.rybczak.net/
-# Maintainer:  Ilya Solovyov, shomyoS at gmail.com
-# Depends on:  boost curl libmpdclient ncurses readline taglib
-# vim:set ts=8 sw=8:
+# Maintainer:  Ilya Solovyov, solovyov at pm dot me
+# Depends on:  boost libmpdclient ncurses taglib
 
 name=ncmpcpp
-version=0.8.1
+version=0.8.2
 release=1
 source=(http://ncmpcpp.rybczak.net/stable/$name-$version.tar.bz2)
 
