@@ -1,11 +1,10 @@
 # Description: Read and write meta information in files
 # URL:         https://www.sno.phy.queensu.ca/~phil/exiftool/
-# Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
+# Maintainer:  Ilya Solovyov, solovyov at pm dot me
 # Depends on:  perl
-# vim:set ft=sh ts=8 sw=8:
 
 name=exiftool
-version=10.80
+version=11.00
 release=1
 source=(https://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-$version.tar.gz)
 

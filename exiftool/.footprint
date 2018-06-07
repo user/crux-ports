@@ -150,6 +150,7 @@ drwxr-xr-x	root/root	usr/lib/perl5/site_perl/5.26/Image/ExifTool/
 -r--r--r--	root/root	usr/lib/perl5/site_perl/5.26/Image/ExifTool/VCard.pm
 -r--r--r--	root/root	usr/lib/perl5/site_perl/5.26/Image/ExifTool/Validate.pm
 -r--r--r--	root/root	usr/lib/perl5/site_perl/5.26/Image/ExifTool/Vorbis.pm
+-r--r--r--	root/root	usr/lib/perl5/site_perl/5.26/Image/ExifTool/WTV.pm
 -r--r--r--	root/root	usr/lib/perl5/site_perl/5.26/Image/ExifTool/WriteCanonRaw.pl
 -r--r--r--	root/root	usr/lib/perl5/site_perl/5.26/Image/ExifTool/WriteExif.pl
 -r--r--r--	root/root	usr/lib/perl5/site_perl/5.26/Image/ExifTool/WriteIPTC.pl
@@ -331,6 +332,7 @@ drwxr-xr-x	root/root	usr/share/man/man3/
 -r--r--r--	root/root	usr/share/man/man3/Image::ExifTool::VCard.3pm.gz
 -r--r--r--	root/root	usr/share/man/man3/Image::ExifTool::Validate.3pm.gz
 -r--r--r--	root/root	usr/share/man/man3/Image::ExifTool::Vorbis.3pm.gz
+-r--r--r--	root/root	usr/share/man/man3/Image::ExifTool::WTV.3pm.gz
 -r--r--r--	root/root	usr/share/man/man3/Image::ExifTool::WriteCanonRaw.3pm.gz
 -r--r--r--	root/root	usr/share/man/man3/Image::ExifTool::WriteExif.3pm.gz
 -r--r--r--	root/root	usr/share/man/man3/Image::ExifTool::WriteIPTC.3pm.gz
