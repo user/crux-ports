@@ -4,7 +4,7 @@
 # Depends on:  cmake gnutls libgcrypt
 
 name=weechat
-version=2.1
+version=2.2
 release=1
 source=(https://weechat.org/files/src/$name-$version.tar.bz2)
 
