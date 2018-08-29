@@ -1,0 +1,17 @@
+# Description: Replacement for 'ls' written in Rust
+# URL:         https://github.com/ogham/exa
+# Maintainer:  Ilya Solovyov, solovyov at pm dot me
+# Depends on:  rust
+
+name=exa
+version=0.8.0
+release=1
+source=(https://github.com/ogham/exa/archive/v$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	make
+	make PREFIX=/usr DESTDIR=$PKG install
+}
+
