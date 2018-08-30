@@ -1,0 +1,17 @@
+# Description: A cat(1) clone with wings
+# URL:         https://github.com/sharkdp/bat
+# Maintainer:  Ilya Solovyov, solovyov at pm dot me
+# Depends on:  rust
+
+name=bat
+version=0.6.0
+release=1
+source=(https://github.com/sharkdp/bat/archive/v$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	cargo build --release
+	install -D -m 0755 target/release/bat $PKG/usr/bin/bat
+}
+
