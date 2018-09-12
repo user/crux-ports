@@ -1,32 +1,29 @@
 # Description: HexChat is an IRC client
-# Mantainer:   Ilya Solovyov solovyov at protonmail dot com
-# Depends on:  gtk dbus-glib
+# Maintainer:  Ilya Solovyov, solovyov at pm dot me
+# Depends on:  gtk dbus-glib libproxy
 # URL:         https://hexchat.github.io/
-# vim:set ft=sh ts=4 sw=4:
 
 name=hexchat
-version=2.12.1
+version=2.14.2
 release=1
 source=(http://dl.hexchat.net/hexchat/$name-$version.tar.xz)
 
 build() {
 	cd $name-$version
 
-	./configure --prefix=/usr \
-		--disable-checksum \
-		--disable-doat \
-		--disable-fishlim \
-		--disable-isocodes \
-		--disable-libcanberra \
-		--disable-libnotify \
-		--disable-libproxy \
-		--disable-lua \
-		--disable-nls \
-		--disable-perl \
-		--disable-sysinfo
+	meson --prefix=/usr build \
+		-Dwith-appdata=false \
+		-Dwith-checksum=false \
+		-Dwith-fishlim=false \
+		-Dwith-gtk=true \
+		-Dwith-libcanberra=false \
+		-Dwith-libnotify=false \
+		-Dwith-lua=false \
+		-Dwith-sysinfo=false \
+		-Dwith-python=false
+	ninja -C build
+	DESTDIR=$PKG ninja -C build install
 
-	make
-	make DESTDIR=$PKG install
-
-	rm -r $PKG/usr/share/{appdata,applications,icons,locale}
+	rm -r $PKG/usr/share/{applications,icons,locale}
 }
+
