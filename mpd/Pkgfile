@@ -4,42 +4,49 @@
 # Depends on:  boost flac libmpdclient libmad libid3tag glib
 
 name=mpd
-version=0.20.20
+version=0.21.2
 release=1
-source=(http://www.musicpd.org/download/mpd/0.20/$name-$version.tar.xz)
+source=(http://www.musicpd.org/download/mpd/0.22/$name-$version.tar.xz)
 
 build() {
 	cd $name-$version
 
-	./autogen.sh
-	./configure \
-		--prefix=/usr \
-		--sysconfdir=/etc \
-		--mandir=/usr/share/man \
-		--enable-database \
-		--enable-libmpdclient \
-		--enable-alsa \
-		--enable-curl \
-		--enable-icu \
-		--disable-inotify \
-		--disable-aac \
-		--disable-soundcloud \
-		--disable-openal \
-		--disable-oss \
-		--disable-systemd-daemon \
-		--disable-smbclient \
-		--disable-gme \
-		--disable-roar \
-		--disable-sndio \
-		--disable-haiku \
-		--disable-jack \
-		--disable-pulse \
-		--disable-sidplay \
-		--with-zeroconf=no
+	meson --prefix=/usr . build --buildtype=release \
+		-Dalsa=enabled \
+		-Dcurl=enabled \
+		-Ddaemon=true \
+		-Ddatabase=true \
+		-Ddbus=enabled \
+		-Dffmpeg=enabled \
+		-Dfifo=true \
+		-Dflac=enabled \
+		-Dhttpd=true \
+		-Dicu=enabled \
+		-Did3tag=enabled \
+		-Dlibmpdclient=enabled \
+		-Dmad=enabled \
+		-Dpipe=true \
+		-Dao=disabled \
+		-Ddocumentation=false \
+		-Ddsd=false \
+		-Dinotify=false \
+		-Djack=disabled \
+		-Dneighbor=false \
+		-Dopenal=disabled \
+		-Doss=disabled \
+		-Dpulse=disabled \
+		-Dsmbclient=disabled \
+		-Dsoundcloud=disabled \
+		-Dsystemd=disabled \
+		-Dudisks=disabled \
+		-Dzeroconf=disabled
 
-	make
-	make DESTDIR=$PKG install
-	rm -rf $PKG/usr/share/doc
+	ninja -C build
+	DESTDIR=$PKG ninja -C build install
+
+	rm -rf $PKG/usr/share/{doc,icons}
 	install -D -m 0644 doc/mpdconf.example $PKG/usr/share/mpd/mpdconf.example
+	install -D -m 0644 doc/mpd.conf.5 $PKG/usr/share/man/man5/mpd.conf.5
+	install -D -m 0644 doc/mpd.1 $PKG/usr/share/man/man1/mpd.1
 }
 
