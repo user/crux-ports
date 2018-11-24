@@ -1,0 +1,23 @@
+# Description: cue and toc file parsers and utilities
+# URL:         https://github.com/svend/cuetools
+# Maintainer:  Ilya Solovyov, solovyov at pm dot me
+# Depends on:  
+
+name=cuetools
+version=1.4.1
+release=1
+source=(https://github.com/svend/cuetools/archive/$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	aclocal
+	autoheader
+	automake --force-missing --add-missing
+	autoconf
+
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}
+
