@@ -1,0 +1,18 @@
+# Description: shntool is a multi-purpose WAVE data processing and reporting utility
+# URL:         http://shnutils.freeshell.org/shntool/
+# Maintainer:  Ilya Solovyov, solovyov at pm dot me
+# Depends on:  
+
+name=shntool
+version=3.0.10
+release=1
+source=(http://shnutils.freeshell.org/shntool/dist/src/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+}
+
