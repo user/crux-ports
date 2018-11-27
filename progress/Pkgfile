@@ -2,10 +2,9 @@
 # URL:         https://github.com/Xfennec/progress
 # Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
 # Depends on:  ncurses
-# vim:set ts=8 sw=8:
 
 name=progress
-version=0.13.1
+version=0.14
 release=1
 source=(https://github.com/Xfennec/$name/archive/v$version.tar.gz)
 
