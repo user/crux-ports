@@ -1,0 +1,22 @@
+# Description: GNU/Linux application to control backlights
+# URL:         https://github.com/haikarainen/light
+# Maintainer:  Ilya Solovyov, solovyov at pm dot me
+# Depends on:
+
+name=light
+version=1.2
+release=1
+source=(https://github.com/haikarainen/light/archive/v$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./autogen.sh
+	./configure --prefix=/usr
+	make
+	make DESTDIR=$PKG install
+
+	rm -rf $PKG/usr/share/doc/
+
+}
+
