@@ -10,9 +10,9 @@ drwxr-xr-x	root/root	usr/include/sensors/
 -rw-r--r--	root/root	usr/include/sensors/error.h
 -rw-r--r--	root/root	usr/include/sensors/sensors.h
 drwxr-xr-x	root/root	usr/lib/
-lrwxrwxrwx	root/root	usr/lib/libsensors.so -> libsensors.so.4
-lrwxrwxrwx	root/root	usr/lib/libsensors.so.4 -> libsensors.so.4.4.0
--rwxr-xr-x	root/root	usr/lib/libsensors.so.4.4.0
+lrwxrwxrwx	root/root	usr/lib/libsensors.so -> libsensors.so.5
+lrwxrwxrwx	root/root	usr/lib/libsensors.so.5 -> libsensors.so.5.0.0
+-rwxr-xr-x	root/root	usr/lib/libsensors.so.5.0.0
 drwxr-xr-x	root/root	usr/sbin/
 -rwxr-xr-x	root/root	usr/sbin/fancontrol
 -rwxr-xr-x	root/root	usr/sbin/isadump

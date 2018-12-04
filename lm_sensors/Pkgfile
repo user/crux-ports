@@ -1,16 +1,15 @@
-# Description: Tools for monitoring system health (temperatures, voltages, fan speed, etc)
-# URL:         http://www.lm-sensors.org
-# Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
-# Depends on:  bison flex perl
-# vim:set ts=8 sw=8:
+# Description: Linux hardware monitoring
+# URL:         https://hwmon.wiki.kernel.org/lm_sensors
+# Maintainer:  Ilya Solovyov, solovyov at pm dot me
+# Depends on:
 
 name=lm_sensors
-version=3.4.0
+version=3.5.0
 release=1
-source=(https://github.com/groeck/lm-sensors/archive/V3-4-0.tar.gz)
+source=(https://github.com/lm-sensors/lm-sensors/archive/V3-5-0.tar.gz)
 
 build() {
-	cd lm-sensors-3-4-0
+	cd lm-sensors-3-5-0
 
 	make \
 		PREFIX=/usr \
