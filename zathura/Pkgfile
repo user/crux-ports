@@ -4,7 +4,7 @@
 # Depends on:  girara
 
 name=zathura
-version=0.4.0
+version=0.4.3
 release=1
 source=(https://pwmt.org/projects/zathura/download/$name-$version.tar.xz)
 
