@@ -5,7 +5,7 @@
 # vim:set ts=8 sw=8:
 
 name=locale-en_RU
-version=0.5.2
+version=0.5.4
 release=1
 source=(https://sourceforge.net/projects/en-ru/files/$version/$name-$version.tar.gz)
 
