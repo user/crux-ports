@@ -11,6 +11,7 @@ source=(http://ncmpcpp.rybczak.net/stable/$name-$version.tar.bz2)
 build() {
 	cd $name-$version
 
+	CPPFLAGS+=' -DU_USING_ICU_NAMESPACE=1'
 	BOOST_LIB_SUFFIX='' ./configure \
 		--prefix=/usr \
 		--mandir=/usr/share/man \
