@@ -1,10 +1,10 @@
 # Description: Music Player Daemon
 # URL:         http://www.musicpd.org/
 # Maintainer:  Ilya Solovyov, solovyov at pm dot me
-# Depends on:  boost flac libmpdclient libmad libid3tag glib
+# Depends on:  boost flac libmpdclient libid3tag libmad
 
 name=mpd
-version=0.21.3
+version=0.21.10
 release=1
 source=(http://www.musicpd.org/download/mpd/0.21/$name-$version.tar.xz)
 
@@ -13,20 +13,18 @@ build() {
 
 	meson --prefix=/usr . build --buildtype=release \
 		-Dalsa=enabled \
-		-Dcurl=enabled \
 		-Ddaemon=true \
 		-Ddatabase=true \
 		-Ddbus=enabled \
 		-Dffmpeg=enabled \
 		-Dfifo=true \
 		-Dflac=enabled \
-		-Dhttpd=true \
 		-Dicu=enabled \
 		-Did3tag=enabled \
 		-Dlibmpdclient=enabled \
 		-Dmad=enabled \
-		-Dpipe=true \
 		-Dao=disabled \
+		-Dsndio=disabled \
 		-Ddocumentation=false \
 		-Ddsd=false \
 		-Dinotify=false \
@@ -40,6 +38,7 @@ build() {
 		-Dsystemd=disabled \
 		-Dudisks=disabled \
 		-Dzeroconf=disabled
+
 
 	ninja -C build
 	DESTDIR=$PKG ninja -C build install
