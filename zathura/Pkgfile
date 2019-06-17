@@ -6,12 +6,11 @@
 name=zathura
 version=0.4.3
 release=1
-source=(https://pwmt.org/projects/zathura/download/$name-$version.tar.xz)
+source=(https://github.com/pwmt/zathura/archive/$version.tar.gz)
 
 build() {
 	cd $name-$version
 
-	sed -i "/subdir('doc')/d" meson.build
 	meson --prefix=/usr build
 	cd build
 	ninja
