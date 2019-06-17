@@ -1,12 +1,12 @@
 # Description: User interface library focused on simplicity and minimalism
 # URL:         http://pwmt.org/projects/girara
 # Maintainer:  Ilya Solovyov, solovyov at pm dot me
-# Depends on:  gtk3
+# Depends on:  gtk3 meson ninja
 
 name=girara
 version=0.3.2
 release=1
-source=(https://pwmt.org/projects/girara/download/$name-$version.tar.xz)
+source=(https://github.com/pwmt/girara/archive/$version.tar.gz)
 
 build() {
 	cd $name-$version
