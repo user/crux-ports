@@ -6,7 +6,7 @@
 name=zathura-djvu
 version=0.2.8
 release=1
-source=(https://pwmt.org/projects/zathura-djvu/download/$name-$version.tar.xz)
+source=(https://github.com/pwmt/zathura-djvu/archive/$version.tar.gz)
 
 build() {
 	cd $name-$version
