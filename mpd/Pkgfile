@@ -4,7 +4,7 @@
 # Depends on:  boost flac libmpdclient libid3tag libmad
 
 name=mpd
-version=0.21.10
+version=0.21.11
 release=1
 source=(http://www.musicpd.org/download/mpd/0.21/$name-$version.tar.xz)
 
@@ -38,7 +38,6 @@ build() {
 		-Dsystemd=disabled \
 		-Dudisks=disabled \
 		-Dzeroconf=disabled
-
 
 	ninja -C build
 	DESTDIR=$PKG ninja -C build install
