@@ -1,14 +1,13 @@
 # Description: truetype monospaced font designed for X environments
 # URL:         https://github.com/agarick/agave
-# Mantainer:   Ilya Solovyov, solovyov at protonmail dot com
-# Depends on:  fontconfig xorg-mkfontdir xorg-mkfontscale xorg-font-util
-# vim:set ts=8 sw=8:
+# Mantainer:   Ilya Solovyov, solovyov at pm dot me
+# Depends on:  xorg-mkfontscale 
 
 name=agave
-version=008
+version=10
 release=1
 source=(https://github.com/agarick/agave/raw/master/dist/agave-r.ttf \
-	post-install)
+		post-install)
 
 build() {
 
