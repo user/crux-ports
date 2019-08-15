@@ -4,7 +4,7 @@
 # Depends on:  perl
 
 name=exiftool
-version=11.00
+version=11.62
 release=1
 source=(https://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-$version.tar.gz)
 
@@ -19,6 +19,6 @@ build() {
 		-iname '.packlist' -or \
 		-iname 'readme' \) -delete
 	find $PKG -empty -delete
-	rm -rf $PKG/usr/lib/perl5/site_perl/5.26/Image/ExifTool/{Charset,Lang}
+	rm -rf $PKG/usr/lib/perl5/site_perl/5.28/Image/ExifTool/{Charset,Lang}
 }
 
