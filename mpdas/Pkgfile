@@ -1,0 +1,19 @@
+# Description: A C++ client to submit tracks to audioscrobbler, supports new protocol
+# URL:         https://50hz.ws/mpdas/
+# Maintainer:  Ilya Solovyov, solovyov at pm dot me
+# Depends on:  curl libmpdclient
+
+name=mpdas
+version=0.4.5
+release=1
+source=(https://50hz.ws/mpdas/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	make PREFIX=/usr CONFIG=/etc
+	make DESTDIR=$PKG PREFIX=/usr MANPREFIX=/usr/share/man/man1 install
+
+	install -D -m 0644 mpdasrc.example $PKG/usr/share/mpdas/mpdasrc.example
+}
+
