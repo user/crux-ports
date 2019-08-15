@@ -16,6 +16,8 @@ build() {
 	ninja
 
 	DESTDIR=$PKG ninja install
-	rm -rf $PKG/usr/share/{appdata,applications,icons,metainfo,locale}
+	rm -rf $PKG/usr/share/{applications,icons,locale}
+	mv $PKG/usr/share/zsh/vendor-completions $PKG/usr/share/zsh/site-functions
+
 }
 
