@@ -1,0 +1,20 @@
+# Description: A small utility to change your NIC's MAC address
+# URL:         https://www.gnu.org/software/macchanger
+# Maintainer:  Ilya Solovyov, solovyov at pm dot me
+# Depends on:
+
+name=macchanger
+version=1.7.0
+release=1
+source=(https://github.com/alobbs/macchanger/releases/download/1.7.0/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/usr
+
+	make
+	make DESTDIR=$PKG install
+	rm -r $PKG/usr/share/info
+}
+
