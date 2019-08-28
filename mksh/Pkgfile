@@ -1,11 +1,10 @@
 # Description: The MirBSD Korn Shell
 # URL:         https://www.mirbsd.org/mksh.htm
-# Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
+# Maintainer:  Ilya Solovyov, solovyov at pm dot me
 # Depends on:  glibc
-# vim:set ts=8 sw=8:
 
 name=mksh
-version=R56c
+version=R57
 release=1
 source=(http://www.mirbsd.org/MirOS/dist/mir/mksh/$name-$version.tgz)
 
