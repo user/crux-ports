@@ -4,7 +4,7 @@
 # Depends on:  perl
 
 name=exiftool
-version=11.62
+version=11.65
 release=1
 source=(https://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-$version.tar.gz)
 
