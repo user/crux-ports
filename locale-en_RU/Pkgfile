@@ -1,11 +1,10 @@
 # Description: Locale en_RU is English language locale for Russia.
 # URL:         http://en-ru.sourceforge.net/
-# Maintainer:  Ilya Solovyov, solovyov at protonmail dot com
-# Depends on:  glibc cmake
-# vim:set ts=8 sw=8:
+# Maintainer:  Ilya Solovyov, solovyov at pm dot me
+# Depends on:
 
 name=locale-en_RU
-version=0.5.4
+version=0.5.5
 release=1
 source=(https://sourceforge.net/projects/en-ru/files/$version/$name-$version.tar.gz)
 
@@ -17,6 +16,7 @@ build() {
 
 	../configure \
 		--prefix=/usr \
+		--enable-ruble-sign \
 		--disable-rmp \
 		--disable-html
 
