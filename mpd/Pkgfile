@@ -4,7 +4,7 @@
 # Depends on:  boost flac libmpdclient libid3tag libmad
 
 name=mpd
-version=0.21.20
+version=0.21.22
 release=1
 source=(http://www.musicpd.org/download/mpd/0.21/$name-$version.tar.xz)
 
