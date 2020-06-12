@@ -4,9 +4,9 @@
 # Depends on:  perl
 
 name=exiftool
-version=11.70
+version=12.00
 release=1
-source=(https://www.sno.phy.queensu.ca/~phil/exiftool/Image-ExifTool-$version.tar.gz)
+source=(https://exiftool.org/Image-ExifTool-$version.tar.gz)
 
 build() {
 	cd Image-ExifTool-$version
@@ -15,10 +15,10 @@ build() {
 	make
 	make DESTDIR=$PKG install
 
-	find $PKG \( -iname '*.pod' -or \
+	find $PKG \( -iname 'perllocal.pod' -or \
 		-iname '.packlist' -or \
 		-iname 'readme' \) -delete
 	find $PKG -empty -delete
-	rm -rf $PKG/usr/lib/perl5/site_perl/5.28/Image/ExifTool/{Charset,Lang}
+	rm -rf $PKG/usr/lib/perl5/site_perl/5.30/Image/ExifTool/{Charset,Lang}
 }
 
