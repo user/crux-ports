@@ -4,7 +4,7 @@
 # Depends on:  boost flac libmpdclient libid3tag libmad
 
 name=mpd
-version=0.21.23
+version=0.21.24
 release=1
 source=(http://www.musicpd.org/download/mpd/0.21/$name-$version.tar.xz)
 
@@ -16,7 +16,6 @@ build() {
 		-Ddaemon=true \
 		-Ddatabase=true \
 		-Ddbus=enabled \
-		-Dffmpeg=enabled \
 		-Dfifo=true \
 		-Dflac=enabled \
 		-Dicu=enabled \
@@ -24,7 +23,8 @@ build() {
 		-Dlibmpdclient=enabled \
 		-Dmad=enabled \
 		-Dao=disabled \
-		-Dsndio=disabled \
+		-Dchromaprint=disabled \
+		-Dffmpeg=disabled \
 		-Ddocumentation=false \
 		-Ddsd=false \
 		-Dinotify=false \
@@ -33,6 +33,9 @@ build() {
 		-Dopenal=disabled \
 		-Doss=disabled \
 		-Dpulse=disabled \
+		-Dsndio=disabled \
+		-Dsndfile=disabled \
+		-Dnfs=disabled \
 		-Dsmbclient=disabled \
 		-Dsoundcloud=disabled \
 		-Dsystemd=disabled \
