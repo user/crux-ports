@@ -4,7 +4,7 @@
 # Depends on:  cmake gnutls libgcrypt
 
 name=weechat
-version=2.6
+version=2.8
 release=1
 source=(https://weechat.org/files/src/$name-$version.tar.bz2)
 
@@ -18,12 +18,13 @@ build() {
 			-DCMAKE_INSTALL_PREFIX=/usr \
 			-DWEECHAT_HOME=~/.config/weechat \
 			-DCA_FILE=/etc/ssl/cert.pem \
-			-DENABLE_ASPELL=false \
 			-DENABLE_GUILE=false \
 			-DENABLE_JAVASCRIPT=false \
 			-DENABLE_NLS=false \
+			-DENABLE_PHP=false \
 			-DENABLE_PYTHON=false \
 			-DENABLE_RUBY=false \
+			-DENABLE_SPELL=false \
 			-DENABLE_TCL=false \
 			-DENABLE_XFER=false
 
