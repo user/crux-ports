@@ -2,16 +2,16 @@
 # URL:         http://hisham.hm/htop/
 # Maintainer:  Ilya Solovyov, solovyov at pm dot me
 # Depends on:  ncurses
-# vim:set ts=8 sw=8:
 
 name=htop
-version=2.2.0
+version=3.0.2
 release=1
-source=(http://hisham.hm/htop/releases/$version/$name-$version.tar.gz)
+source=(https://github.com/htop-dev/htop/archive/$version/htop-$version.tar.gz)
 
 build() {
 	cd $name-$version
 
+	./autogen.sh
 	./configure \
 		--prefix=/usr \
 		--sysconfdir=/etc \
