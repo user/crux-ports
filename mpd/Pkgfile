@@ -1,43 +1,37 @@
 # Description: Music Player Daemon
 # URL:         http://www.musicpd.org/
 # Maintainer:  Ilya Solovyov, solovyov at pm dot me
-# Depends on:  boost flac libmpdclient libid3tag libmad
+# Depends on:  boost dbus flac libmpdclient libid3tag libmad
 
 name=mpd
-version=0.21.25
+version=0.22
 release=1
-source=(http://www.musicpd.org/download/mpd/0.21/$name-$version.tar.xz)
+source=(http://www.musicpd.org/download/mpd/0.22/$name-$version.tar.xz)
 
 build() {
 	cd $name-$version
 
-	meson --prefix=/usr . build --buildtype=release \
+	meson --prefix=/usr . build --buildtype=plain \
 		-Dalsa=enabled \
-		-Ddaemon=true \
-		-Ddatabase=true \
 		-Ddbus=enabled \
-		-Dfifo=true \
 		-Dflac=enabled \
-		-Dicu=enabled \
 		-Did3tag=enabled \
 		-Dlibmpdclient=enabled \
 		-Dmad=enabled \
-		-Dao=disabled \
 		-Dchromaprint=disabled \
+		-Ddocumentation=disabled \
 		-Dffmpeg=disabled \
-		-Ddocumentation=false \
-		-Ddsd=false \
-		-Dinotify=false \
 		-Djack=disabled \
+		-Dhtml_manual=false \
+		-Dmanpages=false \
+		-Dmpg123=disabled \
 		-Dneighbor=false \
+		-Dnfs=disabled \
 		-Dopenal=disabled \
 		-Doss=disabled \
 		-Dpulse=disabled \
 		-Dsndio=disabled \
-		-Dsndfile=disabled \
-		-Dnfs=disabled \
 		-Dsmbclient=disabled \
-		-Dsoundcloud=disabled \
 		-Dsystemd=disabled \
 		-Dudisks=disabled \
 		-Dzeroconf=disabled
@@ -47,7 +41,5 @@ build() {
 
 	rm -rf $PKG/usr/share/{doc,icons}
 	install -D -m 0644 doc/mpdconf.example $PKG/usr/share/mpd/mpdconf.example
-	install -D -m 0644 doc/mpd.conf.5 $PKG/usr/share/man/man5/mpd.conf.5
-	install -D -m 0644 doc/mpd.1 $PKG/usr/share/man/man1/mpd.1
 }
 
