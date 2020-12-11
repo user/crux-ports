@@ -4,14 +4,18 @@
 # Depends on:
 
 name=libmpdclient
-version=2.16
+version=2.19
 release=1
 source=(https://www.musicpd.org/download/libmpdclient/2/$name-$version.tar.xz)
 
 build() {
 	cd $name-$version
 
-	meson --prefix=/usr . build
+	meson --prefix /usr \
+		-D b_lto=true \
+		-D b_pie=true \
+		build
+
 	ninja -C build
 	DESTDIR=$PKG ninja -C build install
 
