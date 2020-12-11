@@ -4,13 +4,12 @@
 # Depends on:  xorg-mkfontscale 
 
 name=agave
-version=10
+version=14
 release=1
-source=(https://github.com/agarick/agave/raw/master/dist/agave-r.ttf \
+source=(https://github.com/agarick/agave/releases/download/v14/Agave-Regular.ttf \
 		post-install)
 
 build() {
-
-	install -D -m 0644 -t $PKG/usr/share/fonts/X11/TTF agave-r.ttf
+	install -D -m 0644 -t $PKG/usr/share/fonts/X11/TTF Agave-Regular.ttf
 }
 

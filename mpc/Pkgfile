@@ -4,14 +4,18 @@
 # Depends on:  meson libmpdclient
 
 name=mpc
-version=0.32
+version=0.33
 release=1
-source=(https://www.musicpd.org/download/mpc/0/mpc-$version.tar.xz)
+source=(https://www.musicpd.org/download/mpc/0/$name-$version.tar.xz)
 
 build() {
 	cd $name-$version
 
-	meson --prefix=/usr . build
+	meson --prefix /usr \
+		-D b_lto=true \
+		-D b_pie=true \
+		build
+
 	ninja -C build
 	DESTDIR=$PKG ninja -C build install
 
