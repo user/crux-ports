@@ -4,37 +4,39 @@
 # Depends on:  boost dbus flac libmpdclient libid3tag libmad
 
 name=mpd
-version=0.22
+version=0.22.3
 release=1
 source=(http://www.musicpd.org/download/mpd/0.22/$name-$version.tar.xz)
 
 build() {
 	cd $name-$version
 
-	meson --prefix=/usr . build --buildtype=plain \
-		-Dalsa=enabled \
-		-Ddbus=enabled \
-		-Dflac=enabled \
-		-Did3tag=enabled \
-		-Dlibmpdclient=enabled \
-		-Dmad=enabled \
-		-Dchromaprint=disabled \
-		-Ddocumentation=disabled \
-		-Dffmpeg=disabled \
-		-Djack=disabled \
-		-Dhtml_manual=false \
-		-Dmanpages=false \
-		-Dmpg123=disabled \
-		-Dneighbor=false \
-		-Dnfs=disabled \
-		-Dopenal=disabled \
-		-Doss=disabled \
-		-Dpulse=disabled \
-		-Dsndio=disabled \
-		-Dsmbclient=disabled \
-		-Dsystemd=disabled \
-		-Dudisks=disabled \
-		-Dzeroconf=disabled
+	meson --prefix /usr \
+	    --buildtype plain \
+		-D alsa=enabled \
+		-D dbus=enabled \
+		-D flac=enabled \
+		-D id3tag=enabled \
+		-D libmpdclient=enabled \
+		-D mad=enabled \
+		-D chromaprint=disabled \
+		-D documentation=disabled \
+		-D ffmpeg=disabled \
+		-D jack=disabled \
+		-D html_manual=false \
+		-D manpages=false \
+		-D mpg123=disabled \
+		-D neighbor=false \
+		-D nfs=disabled \
+		-D openal=disabled \
+		-D oss=disabled \
+		-D pulse=disabled \
+		-D sndio=disabled \
+		-D smbclient=disabled \
+		-D systemd=disabled \
+		-D udisks=disabled \
+		-D zeroconf=disabled \
+		build
 
 	ninja -C build
 	DESTDIR=$PKG ninja -C build install
