@@ -1,26 +1,31 @@
 # Description: ncmpcpp - featureful ncurses based MPD client inspired by ncmpc
 # URL:         http://ncmpcpp.rybczak.net/
 # Maintainer:  Ilya Solovyov, solovyov at pm dot me
-# Depends on:  boost libmpdclient ncurses taglib
+# Depends on:  boost libmpdclient taglib
 
 name=ncmpcpp
 version=0.8.2
-release=1
-source=(http://ncmpcpp.rybczak.net/stable/$name-$version.tar.bz2)
+release=2
+source=(http://ncmpcpp.rybczak.net/stable/$name-$version.tar.bz2
+		gcc10.patch)
 
 build() {
 	cd $name-$version
 
-	CPPFLAGS+=' -DU_USING_ICU_NAMESPACE=1'
-	BOOST_LIB_SUFFIX='' ./configure \
+	patch -p1 -i $SRC/gcc10.patch
+
+	./autogen.sh
+	./configure \
 		--prefix=/usr \
+		--enable-static=no \
 		--mandir=/usr/share/man \
+		--with-pic \
+		--with-curl \
+		--with-taglib \
 		--enable-clock \
 		--enable-outputs \
 		--enable-unicode \
-		--enable-visualizer \
-		--with-curl \
-		--with-taglib
+		--enable-visualizer
 
 	make
 	make DESTDIR=$PKG install
