@@ -4,18 +4,17 @@
 # Depends on:  gtk3 meson ninja
 
 name=girara
-version=0.3.2
+version=0.3.5
 release=1
-source=(https://github.com/pwmt/girara/archive/$version.tar.gz)
+source=(https://pwmt.org/projects/girara/download/$name-$version.tar.xz)
 
 build() {
 	cd $name-$version
 
-	meson --prefix=/usr build
-	cd build
-	ninja
+	meson --prefix /usr build
+	ninja -C build
 
-	DESTDIR=$PKG ninja install
+	DESTDIR=$PKG ninja -C build install
 	rm -rf $PKG/usr/share/locale
 }
 
