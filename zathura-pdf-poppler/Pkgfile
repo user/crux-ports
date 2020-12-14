@@ -4,18 +4,17 @@
 # Depends on:  zathura poppler-glib
 
 name=zathura-pdf-poppler
-version=0.2.9
+version=0.3.0
 release=1
-source=(https://github.com/pwmt/zathura-pdf-poppler/archive/$version.tar.gz)
+source=(https://pwmt.org/projects/zathura-pdf-poppler/download/$name-$version.tar.xz)
 
 build() {
 	cd $name-$version
 
-	meson --prefix=/usr build
-	cd build
-	ninja
+	meson --prefix /usr build
+	ninja -C build
 
-	DESTDIR=$PKG ninja install
+	DESTDIR=$PKG ninja -C build install
 	rm -rf $PKG/usr/share
 }
 
