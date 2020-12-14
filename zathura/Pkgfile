@@ -4,20 +4,17 @@
 # Depends on:  girara
 
 name=zathura
-version=0.4.3
+version=0.4.7
 release=1
-source=(https://github.com/pwmt/zathura/archive/$version.tar.gz)
+source=(https://pwmt.org/projects/zathura/download/$name-$version.tar.xz)
 
 build() {
 	cd $name-$version
 
-	meson --prefix=/usr build
-	cd build
-	ninja
+	meson --prefix /usr build
+	ninja -C build
 
-	DESTDIR=$PKG ninja install
-	rm -rf $PKG/usr/share/{applications,icons,locale}
-	mv $PKG/usr/share/zsh/vendor-completions $PKG/usr/share/zsh/site-functions
-
+	DESTDIR=$PKG ninja -C build install
+	rm -rf $PKG/usr/share/{applications,fish,icons,locale,metainfo}
 }
 

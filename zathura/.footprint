@@ -2,6 +2,25 @@ drwxr-xr-x	root/root	usr/
 drwxr-xr-x	root/root	usr/bin/
 -rwxr-xr-x	root/root	usr/bin/zathura
 drwxr-xr-x	root/root	usr/include/
+drwxr-xr-x	root/root	usr/include/girara/
+-rw-r--r--	root/root	usr/include/girara/callbacks.h
+-rw-r--r--	root/root	usr/include/girara/commands.h
+-rw-r--r--	root/root	usr/include/girara/completion.h
+-rw-r--r--	root/root	usr/include/girara/config.h
+-rw-r--r--	root/root	usr/include/girara/datastructures.h
+-rw-r--r--	root/root	usr/include/girara/entry.h
+-rw-r--r--	root/root	usr/include/girara/girara-version.h
+-rw-r--r--	root/root	usr/include/girara/girara.h
+-rw-r--r--	root/root	usr/include/girara/input-history.h
+-rw-r--r--	root/root	usr/include/girara/log.h
+-rw-r--r--	root/root	usr/include/girara/macros.h
+-rw-r--r--	root/root	usr/include/girara/session.h
+-rw-r--r--	root/root	usr/include/girara/settings.h
+-rw-r--r--	root/root	usr/include/girara/shortcuts.h
+-rw-r--r--	root/root	usr/include/girara/statusbar.h
+-rw-r--r--	root/root	usr/include/girara/template.h
+-rw-r--r--	root/root	usr/include/girara/types.h
+-rw-r--r--	root/root	usr/include/girara/utils.h
 drwxr-xr-x	root/root	usr/include/zathura/
 -rw-r--r--	root/root	usr/include/zathura/document.h
 -rw-r--r--	root/root	usr/include/zathura/links.h
@@ -11,7 +30,11 @@ drwxr-xr-x	root/root	usr/include/zathura/
 -rw-r--r--	root/root	usr/include/zathura/types.h
 -rw-r--r--	root/root	usr/include/zathura/zathura-version.h
 drwxr-xr-x	root/root	usr/lib/
+lrwxrwxrwx	root/root	usr/lib/libgirara-gtk3.so -> libgirara-gtk3.so.3
+lrwxrwxrwx	root/root	usr/lib/libgirara-gtk3.so.3 -> libgirara-gtk3.so.3.1
+-rwxr-xr-x	root/root	usr/lib/libgirara-gtk3.so.3.1
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
+-rw-r--r--	root/root	usr/lib/pkgconfig/girara-gtk3.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/zathura.pc
 drwxr-xr-x	root/root	usr/share/
 drwxr-xr-x	root/root	usr/share/bash-completion/
@@ -20,8 +43,6 @@ drwxr-xr-x	root/root	usr/share/bash-completion/completions/
 drwxr-xr-x	root/root	usr/share/dbus-1/
 drwxr-xr-x	root/root	usr/share/dbus-1/interfaces/
 -rw-r--r--	root/root	usr/share/dbus-1/interfaces/org.pwmt.zathura.xml
-drwxr-xr-x	root/root	usr/share/metainfo/
--rw-r--r--	root/root	usr/share/metainfo/org.pwmt.zathura.appdata.xml
 drwxr-xr-x	root/root	usr/share/zsh/
 drwxr-xr-x	root/root	usr/share/zsh/site-functions/
 -rw-r--r--	root/root	usr/share/zsh/site-functions/_zathura
