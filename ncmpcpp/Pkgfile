@@ -4,15 +4,12 @@
 # Depends on:  boost libmpdclient taglib
 
 name=ncmpcpp
-version=0.8.2
-release=2
-source=(http://ncmpcpp.rybczak.net/stable/$name-$version.tar.bz2
-		gcc10.patch)
+version=0.9.1
+release=1
+source=(http://ncmpcpp.rybczak.net/stable/$name-$version.tar.bz2)
 
 build() {
 	cd $name-$version
-
-	patch -p1 -i $SRC/gcc10.patch
 
 	./autogen.sh
 	./configure \
